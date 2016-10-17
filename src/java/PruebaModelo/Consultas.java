@@ -488,7 +488,8 @@ public class Consultas {
             st = con.createStatement();
             rs = st.executeQuery(sql);
             if (rs.next()) {
-                imagen = rs.getString("imagen");                
+                imagen = rs.getString("imagen");           
+                System.out.println("imagen en consulta"+imagen) ;
             }
             if (imagen.equals(null))
                 imagen = "../img/user.png";

@@ -80,7 +80,9 @@
             Integer mes = usu.getNacimiento().getMes();
             Integer anio = usu.getNacimiento().getAno();
             String fexa = dia.toString() + "/" + mes.toString() + "/" + anio.toString();
-*/
+*/ Consultas con =new  Consultas();
+    String imagen =con.imagenPerfilUsuario(nick);
+    System.out.println(imagen) ;
         %>  
         <br>
         <br>
@@ -90,7 +92,7 @@
                     <div class="col-md-12">
                         <ul class="media-list">
                             <li class="media">
-                                <a class="pull-left" href="#"><img class="media-object" src="../img/user.png" height="64" width="64"></a>
+                                <a class="pull-left" href="#"><img class="media-object" src=<%=imagen%> height="64" width="64"></a>
                                 <div class="media-body">
                                     <h2 class="media-heading"><%= nick%></h2>
                                     <p><%= email%></p>
@@ -141,7 +143,7 @@
                         </tr>
                         <% DtReserva dtRes = null;
                            List<DtReserva> reservas;
-                           Consultas con = new Consultas();
+                           //Consultas con = new Consultas();
                            reservas = con.listarReservasUsuario(nick) ;
                            Iterator<DtReserva> iter = reservas.iterator();
                            Integer i=0;
